@@ -3,7 +3,7 @@
 }
 
 :root {
-    --cell-size: 100px;
+    --cell-size: 150px;
     --mark-size: calc(var(--cell-size) * .95)
 }
 
@@ -139,7 +139,9 @@ body {
     font-size: 3rem;
     background-color: white;
     border: 1px solid black;
+    border-radius: 12px;
     padding: .25em .5em;
+
     cursor: pointer;
 }
 

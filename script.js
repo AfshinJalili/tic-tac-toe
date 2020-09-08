@@ -72,9 +72,10 @@ function swapTurns() {
 
 function endGame(draw) {
     if (draw) {
-        winningMessageTextElement.innerText = 'Draw!'
+        winningMessageTextElement.innerText = 'DRAW!'
     } else {
-        winningMessageTextElement.innerText = `${circleTurn ? "O's" : "X's"} wins!`
+        winningMessageTextElement.innerText = `${circleTurn ? "O's" : "X's"} WINS!`
+        
     }
 
     winningMessageElement.classList.add('show');
