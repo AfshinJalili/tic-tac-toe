@@ -59,7 +59,10 @@ body {
 }
 
 .cell.x::before,
-.cell.x::after,
+.cell.x::after {
+    background-color: rgb(30, 78, 64);
+}
+
 .cell.circle::before {
     background-color: black;
 }
