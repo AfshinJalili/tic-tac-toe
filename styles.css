@@ -4,7 +4,7 @@
 
 :root {
     --cell-size: 100px;
-    --mark-size: calc(var(--cell-size) * .95)
+    --mark-size: calc(var(--cell-size) * .8)
 }
 
 body {
@@ -26,7 +26,8 @@ body {
 .cell {
     width: var(--cell-size);
     height: var(--cell-size);
-    border: 1px solid black;
+    /* border: 3px solid rgb(167, 166, 166); */
+    border: 3px solid rgba(0,0,0,.54);
     display: flex;
     justify-content: center;
     align-items: center;
