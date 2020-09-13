@@ -13,7 +13,7 @@ const WINNING_COMBINATION = [
     [2, 4, 6]
 ];
 let circleTurn;
-const cellElements = document.querySelectorAll('[data-cell');
+const cellElements = document.querySelectorAll('[data-cell]');
 const board = document.getElementById('board');
 const winningMessageTextElement = document.querySelector('[data-winning-message-text]');
 const winningMessageElement = document.getElementById('winningMessage');

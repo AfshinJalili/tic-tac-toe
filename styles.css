@@ -12,6 +12,7 @@ body {
 }
 
 .board {
+    background-color: #14bdac;
     width: 100vw;
     height: 100vh;
     display: grid;
@@ -137,19 +138,18 @@ body {
 
 .winning-message button {
     font-size: 3rem;
-    background-color: white;
-    border: 1px solid black;
+    background-color: rgb(185, 211, 99);
+    border: none;
     border-radius: 12px;
     padding: .25em .5em;
-
     cursor: pointer;
 }
 
 .winning-message button:hover {
-    font-size: 4rem;
+    font-size: 3.5rem;
     color: white;
-    background-color: black;
-    border: 1px solid white;
+    background-color: rgb(107, 160, 77);
+    border: none;
     padding: .25em .5em;
     cursor: pointer;
 }
@@ -157,3 +157,8 @@ body {
 .winning-message.show {
     display: flex;
 }
+
+.winning-message div { 
+    color: rgb(17, 238, 238);
+}
+
