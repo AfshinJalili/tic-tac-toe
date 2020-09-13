@@ -13,13 +13,18 @@ const WINNING_COMBINATION = [
     [2, 4, 6]
 ];
 let circleTurn;
+let xScore = 0;
+let oScore = 0;
 const cellElements = document.querySelectorAll('[data-cell]');
 const board = document.getElementById('board');
 const winningMessageTextElement = document.querySelector('[data-winning-message-text]');
 const winningMessageElement = document.getElementById('winningMessage');
 const restartButton = document.getElementById('restartButton');
 
+
+
 startGame();
+
 
 
 function startGame() {
@@ -29,10 +34,17 @@ function startGame() {
 
     circleTurn = true;
 
+    setScoreboard();
     setBoardHoverClass();
 }
 
+function setScoreboard() {
+    document.getElementById('x-score').innerText = `× ${xScore}`;
+    document.getElementById('o-score').innerText = `o ${oScore}`;
+}
+
 restartButton.addEventListener('click', restartGame);
+winningMessageElement.addEventListener('click', nextRound);
 
 function restartGame() {
     cellElements.forEach(cell => {
@@ -41,8 +53,19 @@ function restartGame() {
         cell.removeEventListener('click', handleClick);
     });
     winningMessageElement.classList.remove('show');
+    xScore = oScore = 0;
     startGame();
    
+}
+
+function nextRound() {
+    cellElements.forEach(cell => {
+        cell.classList.remove(X_CLASS);
+        cell.classList.remove(CIRCLE_CLASS);
+        cell.removeEventListener('click', handleClick);
+    });
+    winningMessageElement.classList.remove('show');
+    startGame();
 }
 
 function handleClick(e) {
@@ -74,11 +97,17 @@ function endGame(draw) {
     if (draw) {
         winningMessageTextElement.innerText = 'DRAW!'
     } else {
-        winningMessageTextElement.innerText = `${circleTurn ? "O's" : "X's"} WINS!`
-        
+        winningMessageTextElement.innerText = `${circleTurn ? "o" : "×"}`
+        updateScoreboard(circleTurn);
     }
 
     winningMessageElement.classList.add('show');
+
+}
+
+function updateScoreboard(circleTurn) {
+    if (circleTurn) oScore++; else xScore++;
+    setScoreboard();
 }
 
 function isDraw() {

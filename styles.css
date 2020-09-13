@@ -9,12 +9,38 @@
 
 body {
     margin: 0;
+    font: 1em sans-serif;
+}
+
+#scoreboard {
+    background-color: rgb(235, 232, 232);
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    font-size: 2rem;   
+    width: 100vw;
+    height: 15vh; 
+
+}
+
+#x-score,
+#o-score {
+    margin: 45px;
+    position: relative;
+    background-color: rgb(238, 234, 234);
+    border-radius : 10px;
+    width: 40vw;
+    text-align: center;
+    box-shadow: 0 1px 1px rgba(0,0,0,.16);
 }
 
 .board {
     background-color: #14bdac;
     width: 100vw;
-    height: 100vh;
+    height: 80vh;
     display: grid;
     justify-content: center;
     align-content: center;
@@ -23,10 +49,10 @@ body {
     grid-template-columns: repeat(3, auto);
 }
 
+
 .cell {
     width: var(--cell-size);
     height: var(--cell-size);
-    /* border: 3px solid rgb(167, 166, 166); */
     border: 3px solid rgba(0,0,0,.54);
     display: flex;
     justify-content: center;
@@ -127,17 +153,18 @@ body {
     right: 0;
     bottom: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: #14bdac;
     justify-content: center;
     align-items: center;
     color: white;
     font-size: 5rem;
     flex-direction: column;
+    cursor: pointer;
 
 }
 
 
-.winning-message button {
+/* .winning-message button {
     font-size: 3rem;
     background-color: rgb(185, 211, 99);
     border: none;
@@ -153,13 +180,27 @@ body {
     border: none;
     padding: .25em .5em;
     cursor: pointer;
-}
+} */
 
 .winning-message.show {
     display: flex;
 }
 
 .winning-message div { 
-    color: rgb(17, 238, 238);
+    color:gray;
+}
+
+/*////////////////////////////////////////////////////*/
+.restart-div {
+    background-color: rgb(235, 232, 232);;
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    
+}
+
+#restartButton {
+    border: none;
+    color: #10a899;
 }
 
